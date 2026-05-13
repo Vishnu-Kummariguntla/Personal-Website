@@ -58,58 +58,6 @@ const coolThings = [
       "Practiced engineering documentation by turning ideas, sketches, and tests into clearer design decisions.",
     ],
   },
-  {
-    slug: "placeholder-project",
-    title: "Blank Project",
-    date: "2024",
-    description: "Use this placeholder to test the horizontal timeline layout. Replace this with another project when you are ready.",
-    image: "/images/ftc/logo.png",
-    gallery: [],
-    details: [
-      "Add a specific detail about the project here.",
-      "Add a skill, tool, or process you learned here.",
-      "Add a result, lesson, or improvement here.",
-    ],
-  },
-  {
-    slug: "placeholder-project-2",
-    title: "Blank Project 2",
-    date: "2022",
-    description: "Another placeholder project for testing timeline spacing, ordering, and horizontal scrolling.",
-    image: "/images/ftc/logo.png",
-    gallery: [],
-    details: [
-      "Replace this with a project-specific detail.",
-      "Replace this with a skill learned.",
-      "Replace this with a result or reflection.",
-    ],
-  },
-  {
-    slug: "placeholder-project-3",
-    title: "Blank Project 3",
-    date: "2021",
-    description: "A third placeholder so the timeline has enough items to scroll through on larger screens.",
-    image: "/images/ftc/logo.png",
-    gallery: [],
-    details: [
-      "Add what you built or explored.",
-      "Add the tools or methods you used.",
-      "Add what changed after doing it.",
-    ],
-  },
-  {
-    slug: "placeholder-project-4",
-    title: "Blank Project 4",
-    date: "2020",
-    description: "Use this final placeholder to test the oldest end of the horizontal project timeline.",
-    image: "/images/ftc/logo.png",
-    gallery: [],
-    details: [
-      "Add the starting context here.",
-      "Add what you learned here.",
-      "Add the outcome here.",
-    ],
-  },
 ];
 
 const debateTournaments = [
