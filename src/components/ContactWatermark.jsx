@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { profile } from "../data";
 
 export default function ContactWatermark() {
@@ -20,6 +20,12 @@ export default function ContactWatermark() {
       icon: Github,
       external: true,
     },
+    {
+      label: "LinkedIn",
+      href: profile.linkedin,
+      icon: Linkedin,
+      external: true,
+    },
   ];
 
   return (
@@ -28,7 +34,7 @@ export default function ContactWatermark() {
         <span className="inline-flex min-w-20 items-center justify-center rounded-full bg-white/10 px-3 py-2 text-center text-white/75 transition-all duration-300 group-hover:bg-cyan-200 group-hover:text-slate-700">
           Contact
         </span>
-        <div className="flex max-w-0 items-center gap-2 overflow-hidden opacity-0 transition-all duration-300 group-hover:max-w-[42rem] group-hover:opacity-100">
+        <div className="contact-scrollbar flex max-w-0 items-center gap-2 overflow-hidden opacity-0 transition-all duration-300 group-hover:max-w-[min(42rem,calc(100vw-9rem))] group-hover:overflow-x-auto group-hover:opacity-100">
           {contacts.map((contact) => {
             const Icon = contact.icon;
 

@@ -43,3 +43,25 @@ button {
 .timeline-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgb(165 243 252);
 }
+
+.contact-scrollbar {
+  scrollbar-color: rgb(165 243 252 / 0.8) transparent;
+  scrollbar-width: thin;
+}
+
+.contact-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.contact-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contact-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(165 243 252 / 0.75);
+  border-radius: 999px;
+}
+
+.contact-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgb(165 243 252);
+}

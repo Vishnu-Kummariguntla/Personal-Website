@@ -8,6 +8,7 @@ export const profile = {
   phone: "925-574-3060",
   email: "vishnu.kummariguntla@gmail.com",
   github: "Vishnu-Kummariguntla",
+  linkedin: "https://www.linkedin.com/in/vishnu-kummariguntla-236315372/?skipRedirect=true",
   image: "/images/profile/profile.png",
 };
 
