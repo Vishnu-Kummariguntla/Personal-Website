@@ -1,0 +1,184 @@
+export const profile = {
+  name: "Vishnu Kummariguntla",
+  tagline: "“Pursue excellence. Success will follow.”",
+  intro:
+    "I'm currently a student at Dougherty Valley High School and I am deeply interested in all the kinds of systems that come together to make the machines we interact with on a daily basis. I build projects ranging from robotics, to websites and more.",
+  goal:
+    "I am an engineer. My long-term goal is to build cool things that make life easier, and contribute to the development of humanity in a meaningful way",
+  phone: "925-574-3060",
+  email: "vishnu.kummariguntla@gmail.com",
+  github: "Vishnu-Kummariguntla",
+  image: "/images/profile/profile.png",
+};
+
+export const coolThings = [
+  {
+    slug: "ftc-robotics",
+    title: "FTC Robotics",
+    date: "2024-2025",
+    description:
+      "I participated in FIRST Tech Challenge (FTC), a competitive robotics program where teams design, build, and program robots to complete engineering challenges. As the builder and CAD designer on my team, I created detailed 3D models of the robot, designed mechanical systems, and helped assemble and optimize the bot for competition. I collaborated with teammates to test designs, solve engineering problems, and continuously improve the robot's performance throughout the season.",
+    image: "/images/ftc/logo.png",
+    gallery: [
+      {
+        src: "/images/ftc/robot-build-1.jpg",
+        alt: "FTC robot build photo",
+        description: "A team photo with the game field, and the bot.",
+        skills: [],
+      },
+      {
+        src: "/images/ftc/robot-build-2.jpg",
+        alt: "FTC robot mechanism photo",
+        description:
+          "A closer look at the robot hardware and mechanism layout during developmental phases and refinement.",
+        skills: ["Computer Aided Design", "Engineering Process", "Design testing"],
+      },
+      {
+        src: "/images/ftc/robot-build-3.jpg",
+        alt: "Autonomous programming",
+        description: "A view of the process behind programming the autonomous part of the game",
+        skills: ["Programming", "Fine Tuning"],
+      },
+      {
+        src: "/images/ftc/robot-build-4.jpg",
+        alt: "The trifold presentation",
+        description:
+          "A trifold showcasing all the different aspects of the team and the engineering process",
+        skills: ["Collaboration", "Communication", "Exposition"],
+      },
+    ],
+    details: [
+      "Designed and iterated mechanical parts for the robot using CAD, with a focus on buildability and competition constraints.",
+      "Helped assemble the robot and troubleshoot design problems during testing.",
+      "Worked with teammates to improve reliability, optimize mechanisms, and prepare the robot for FTC match play.",
+      "Practiced engineering documentation by turning ideas, sketches, and tests into clearer design decisions.",
+    ],
+  },
+];
+
+export const debateTournaments = [
+  {
+    tournament: "California State Tournament",
+    result: "5th place",
+    year: "2026",
+    schoolYear: "Freshman year",
+    description:
+      "Finished 5th at the High School California State Tournament in Public Forum debate.",
+    centerResult: true,
+    images: [
+      {
+        src: "/images/debate/states2.JPEG",
+        alt: "California State Tournament debate photo",
+      },
+      {
+        src: "/images/debate/states.png",
+        alt: "California State Tournament awards photo",
+      },
+    ],
+  },
+  {
+    tournament: "National Circuit Tournaments",
+    result: "Varsity elimination rounds",
+    year: "2026",
+    schoolYear: "Freshman year",
+    description:
+      "Consistently reached elimination rounds in the varsity division at national tournaments including Berkeley, Princeton, and Stanford.",
+    centerResult: true,
+    images: [
+      {
+        src: "/images/debate/6079b048b75726ac0fe76fa8be06d980.JPEG",
+        alt: "National circuit debate tournament photo",
+      },
+      {
+        src: "/images/debate/IMG_0042.png",
+        alt: "National circuit debate event photo",
+      },
+      {
+        src: "/images/debate/IMG_7922.png",
+        alt: "National circuit debate team photo",
+      },
+    ],
+  },
+  {
+    tournament: "Nationals",
+    result: "Champion",
+    year: "2025",
+    schoolYear: "Middle school",
+    description: "Competed at Nationals in Public Forum debate during middle school.",
+    centerResult: true,
+    images: [
+      {
+        src: "/images/debate/nats.png",
+        alt: "Nationals debate photo",
+      },
+      {
+        src: "/images/debate/nats2.png",
+        alt: "Nationals awards photo",
+      },
+      {
+        src: "/images/debate/nats3.png",
+        alt: "Nationals tournament photo",
+      },
+      {
+        src: "/images/debate/nats4.JPG",
+        alt: "Nationals team photo",
+      },
+    ],
+  },
+  {
+    tournament: "Middle School Tournament of Champions",
+    result: "Semifinalist (3rd)",
+    year: "2025",
+    schoolYear: "Middle school",
+    description:
+      "Competed at the Middle School Tournament of Champions in Public Forum debate.",
+    centerResult: true,
+    images: [],
+  },
+];
+
+export const debateYearHighlights = {
+  "Freshman year": [
+    "Earned 5 bids to the Tournament of Champions.",
+    "Debated over 110 rounds.",
+    "Peak rank: #121 in the nation",
+  ],
+};
+
+export const debateRoles = [
+  {
+    title: "Varsity Public Forum Captain",
+    years: "2026-2027",
+    description:
+      "Served as Varsity Public Forum Captain for Dougherty Valley Speech & Debate, leading team organization, coordinating practices, mentoring underclassmen debaters, and helping drive competitive success at league and national-circuit tournaments. Collaborated closely with coaching staff to manage communication, preparation, and team development while remaining an active varsity competitor throughout the season.",
+  },
+];
+
+export const hobbies = [
+  {
+    title: "Car spotting",
+    description:
+      "Tracking interesting cars, learning the details behind different models, and noticing how design and engineering choices show up in the real world.",
+    icon: "Car",
+  },
+  {
+    title: "Programming",
+    description:
+      "Building small tools and experiments, exploring how software systems work, and turning ideas into usable projects.",
+    icon: "Code2",
+  },
+  {
+    title: "Cricket",
+    description:
+      "Following cricket, with an appreciation for the strategy, patience, and consistency the sport rewards.",
+    icon: "Dumbbell",
+  },
+  {
+    title: "Debate",
+    description:
+      "Researching complex topics, building arguments, and practicing clear communication through Public Forum debate.",
+    icon: "Mic",
+  },
+];
+
+export const navItems = ["About", "Cool Things I've Done", "Debate", "Hobbies"];
