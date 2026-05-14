@@ -1,5 +1,5 @@
 import React from "react";
-import { Car, Code2, Dumbbell, Mic } from "lucide-react";
+import { Car, Code2, Mic } from "lucide-react";
 import { hobbies } from "../../data";
 import Card from "../Card";
 import SectionHeader from "../SectionHeader";
@@ -7,7 +7,7 @@ import SectionHeader from "../SectionHeader";
 const hobbyIcons = {
   Car,
   Code2,
-  Dumbbell,
+  CricketBat,
   Mic,
 };
 
@@ -26,7 +26,7 @@ export default function HobbiesSection() {
 
             return (
               <Card key={hobby.title}>
-                <div className="w-14 h-14 rounded-2xl bg-slate-950 text-white flex items-center justify-center mb-5">
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-lg bg-slate-950 text-white">
                   <Icon size={26} />
                 </div>
                 <h3 className="mb-3 text-lg font-bold leading-snug text-slate-800">
@@ -39,5 +39,42 @@ export default function HobbiesSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function CricketBat({ size = 26 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <g transform="rotate(-24 10.2 12)">
+        <rect x="8.7" y="1.6" width="3" height="4.3" rx="0.8" fill="currentColor" />
+        <rect x="8.25" y="5.5" width="3.9" height="1.2" rx="0.35" fill="currentColor" />
+        <rect x="8.9" y="7.1" width="2.6" height="1.6" rx="0.35" fill="currentColor" />
+        <path
+          d="M6.7 8.6h7l-1 12.6c-.1.8-.8 1.4-1.6 1.4H9.3c-.8 0-1.5-.6-1.6-1.4L6.7 8.6Z"
+          fill="currentColor"
+        />
+        <rect x="7.15" y="9.7" width="6.1" height="1.1" fill="white" opacity="0.92" />
+        <rect x="7.65" y="18.7" width="5.1" height="1.1" fill="white" opacity="0.92" />
+      </g>
+      <circle cx="17.4" cy="12" r="3.2" fill="currentColor" />
+      <path
+        d="M15.2 14.2c2.1-.4 3.5-1.8 4.1-4"
+        stroke="white"
+        strokeWidth="1.1"
+        strokeLinecap="round"
+      />
+      <path
+        d="M14.7 12.3c1.6-.5 2.8-1.6 3.5-3.1"
+        stroke="white"
+        strokeWidth="1"
+        strokeLinecap="round"
+      />
+    </svg>
   );
 }

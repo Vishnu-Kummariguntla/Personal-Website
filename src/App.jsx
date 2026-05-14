@@ -36,7 +36,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen text-slate-700 relative">
+    <div className="site-shell relative min-h-screen text-slate-700">
       <InteractiveBackground />
       <ContactWatermark />
       <div className="relative z-10">
@@ -46,7 +46,7 @@ export default function App() {
         <ProjectsSection onProjectOpen={navigateTo} />
         <DebateSection />
         <HobbiesSection />
-        <footer className="py-10 px-5 border-t border-white/10 text-center text-white/60">
+        <footer className="border-t border-white/10 px-5 py-10 text-center text-white/60">
           <p>
             © {new Date().getFullYear()} {profile.name}. Built as a living portfolio.
           </p>

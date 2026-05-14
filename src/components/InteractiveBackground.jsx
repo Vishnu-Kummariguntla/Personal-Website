@@ -21,27 +21,29 @@ export default function InteractiveBackground() {
       <div
         className="absolute inset-0 transition-all duration-300"
         style={{
-          background: `radial-gradient(circle at ${mouse.x}% ${mouse.y}%, rgba(56, 189, 248, 0.48), transparent 26%), radial-gradient(circle at ${100 - mouse.x}% ${100 - mouse.y}%, rgba(168, 85, 247, 0.36), transparent 30%), radial-gradient(circle at ${mouse.y}% ${100 - mouse.x}%, rgba(34, 197, 94, 0.18), transparent 24%), linear-gradient(135deg, #020617, #0f172a, #111827)`,
+          background: `radial-gradient(circle at ${mouse.x}% ${mouse.y}%, rgba(34, 211, 238, 0.26), transparent 24%), radial-gradient(circle at ${100 - mouse.x}% ${100 - mouse.y}%, rgba(245, 158, 11, 0.16), transparent 28%), linear-gradient(135deg, #020617, #0f172a 45%, #052e2b)`,
         }}
       />
 
-      <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:48px_48px]" />
+      <div className="absolute inset-0 opacity-30 bg-[linear-gradient(rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:56px_56px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.06)_46%,transparent_58%)] opacity-50" />
+      <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-cyan-200/10 to-transparent" />
 
-      {[...Array(28)].map((_, index) => (
+      {[...Array(22)].map((_, index) => (
         <motion.div
           key={index}
-          className="absolute w-2 h-2 rounded-full bg-white/40 blur-[1px]"
+          className="absolute h-px w-12 rounded-full bg-cyan-100/30"
           style={{
             left: `${(index * 37) % 100}%`,
             top: `${(index * 53) % 100}%`,
           }}
           animate={{
-            y: [0, -30, 0],
-            opacity: [0.2, 0.9, 0.2],
-            scale: [1, 1.7, 1],
+            x: [0, 28, 0],
+            opacity: [0.08, 0.48, 0.08],
+            scaleX: [0.8, 1.4, 0.8],
           }}
           transition={{
-            duration: 3 + (index % 5),
+            duration: 4 + (index % 5),
             repeat: Infinity,
             delay: index * 0.15,
           }}
@@ -49,12 +51,12 @@ export default function InteractiveBackground() {
       ))}
 
       <motion.div
-        className="absolute -left-32 top-24 w-96 h-96 rounded-full bg-cyan-400/20 blur-3xl"
+        className="absolute left-0 top-28 h-32 w-[42rem] -rotate-12 bg-cyan-300/10 blur-3xl"
         animate={{ x: mouse.x * 1.4 - 70, y: mouse.y * 0.9 - 45 }}
         transition={{ type: "spring", stiffness: 45, damping: 22 }}
       />
       <motion.div
-        className="absolute right-0 bottom-0 w-[32rem] h-[32rem] rounded-full bg-purple-500/20 blur-3xl"
+        className="absolute bottom-16 right-0 h-32 w-[36rem] rotate-12 bg-amber-300/10 blur-3xl"
         animate={{ x: mouse.x * -1.1 + 55, y: mouse.y * -0.8 + 40 }}
         transition={{ type: "spring", stiffness: 38, damping: 24 }}
       />

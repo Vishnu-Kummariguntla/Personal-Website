@@ -1,9 +1,20 @@
 import React from "react";
-import { Mic } from "lucide-react";
-import { debateRoles, debateTournaments, debateYearHighlights } from "../../data";
+import { Handshake, MessageSquareText, Mic, Scale } from "lucide-react";
+import {
+  debateEnjoymentReasons,
+  debateRoles,
+  debateTournaments,
+  debateYearHighlights,
+} from "../../data";
 import { groupDebateTournaments } from "../../utils/sort";
 import Card from "../Card";
 import SectionHeader from "../SectionHeader";
+
+const enjoymentIcons = {
+  Handshake,
+  MessageSquareText,
+  Scale,
+};
 
 const debateTournamentGroups = groupDebateTournaments(
   debateTournaments,
@@ -20,6 +31,31 @@ export default function DebateSection() {
           subtitle="I am a competitive Public Forum debater for Dougherty Valley High School with extensive experience on the national circuit. Over the course of my debate career, I have competed at major invitationals across the country, consistently breaking to elimination rounds and earning multiple Tournament of Champions bids. Through debate, I have developed strong skills in public speaking, research, critical thinking, argumentation, and teamwork while debating complex topics involving international relations, technology, economics, and public policy."
         />
         <div className="space-y-16">
+          <div>
+            <h3 className="mb-8 text-xl font-bold text-slate-200">
+              Why I Enjoy Debate
+            </h3>
+            <div className="grid gap-5 md:grid-cols-3">
+              {debateEnjoymentReasons.map((reason) => {
+                const Icon = enjoymentIcons[reason.icon];
+
+                return (
+                  <Card key={reason.title}>
+                    <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-lg bg-slate-950 text-white">
+                      <Icon size={26} />
+                    </div>
+                    <h4 className="mb-3 text-lg font-bold leading-snug text-slate-800">
+                      {reason.title}
+                    </h4>
+                    <p className="text-sm leading-7 text-slate-600">
+                      {reason.description}
+                    </p>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+
           <div>
             <h3 className="mb-8 text-xl font-bold text-slate-200">
               Tournament Results
@@ -59,7 +95,7 @@ export default function DebateSection() {
               {debateRoles.map((role) => (
                 <Card key={role.title}>
                   <div className="flex gap-4">
-                    <div className="w-14 h-14 flex-none rounded-2xl bg-slate-950 text-white flex items-center justify-center">
+                    <div className="flex h-14 w-14 flex-none items-center justify-center rounded-lg bg-slate-950 text-white">
                       <Mic size={26} />
                     </div>
                     <div>
@@ -101,7 +137,7 @@ function DebateTournamentCard({ event }) {
             <p className="mt-3 text-base leading-7 text-slate-700">{event.description}</p>
           </div>
           <div
-            className={`${event.centerResult ? "mx-auto text-center" : ""} px-4 py-2 rounded-full bg-slate-100 font-bold text-slate-600 w-fit`}
+            className={`${event.centerResult ? "mx-auto text-center" : ""} w-fit rounded-md bg-slate-100 px-4 py-2 font-bold text-slate-600`}
           >
             {event.result}
           </div>
@@ -111,12 +147,12 @@ function DebateTournamentCard({ event }) {
             {event.images.map((image) => (
               <div
                 key={image.src}
-                className="flex h-72 w-full items-center justify-center overflow-hidden rounded-2xl p-3"
+                className="flex h-72 w-full items-center justify-center overflow-hidden rounded-lg p-3"
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="h-full w-full rounded-xl object-contain"
+                  className="h-full w-full rounded-md object-contain"
                 />
               </div>
             ))}

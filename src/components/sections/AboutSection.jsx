@@ -15,7 +15,7 @@ export default function AboutSection() {
         />
         <Card>
           <div className="grid md:grid-cols-[80px_1fr] gap-6 items-start">
-            <div className="w-16 h-16 rounded-2xl bg-slate-950 text-white flex items-center justify-center">
+            <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-slate-950 text-white">
               <User size={30} />
             </div>
             <div>
@@ -29,7 +29,7 @@ export default function AboutSection() {
               </p>
               <button
                 onClick={() => scrollToSection("cool-things")}
-                className="mt-5 px-5 py-3 rounded-2xl bg-slate-950 text-white font-semibold shadow-sm"
+                className="cool-button mt-5 rounded-lg px-5 py-3 font-semibold"
               >
                 See My Work
               </button>

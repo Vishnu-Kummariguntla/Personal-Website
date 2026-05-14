@@ -14,6 +14,30 @@ export const profile = {
 
 export const coolThings = [
   {
+    slug: "accounting-project",
+    title: "MiniLedger",
+    date: "2026",
+    description:
+      "MiniLedger is a browser-based finance and accounting dashboard built with HTML, CSS, JavaScript, and Node.js. The core feature is a frontend-only double-entry accounting system that lets users create a chart of accounts, post balanced journal entries, view a general ledger, generate a trial balance, import/export JSON data, and load sample transactions. The project also includes finance-learning sections for news, market signals, volatility, treasuries, equities, MBA flashcards, and SIE study tools. It was completed in 2026.",
+    image: "/images/accounting/miniledger.svg",
+    repoUrl: "https://github.com/teslaroadster68/Accounting-Project",
+    gallery: [
+      {
+        src: "/images/accounting/sie-trainer.svg",
+        alt: "SIE Trainer study tool",
+        description:
+          "A study interface for Securities Industry Essentials review, with practice prompts, answer tracking, and focused exam-prep sections.",
+        skills: ["Finance Education", "Study Tools", "JavaScript"],
+      },
+    ],
+    details: [
+      "Built a frontend-only double-entry accounting workflow for creating accounts, posting balanced journal entries, reviewing ledger activity, and generating a trial balance.",
+      "Added JSON import/export and sample transactions so users can save, reload, and quickly explore realistic accounting data.",
+      "Included finance-learning modules covering market news, signals, volatility, treasuries, equities, MBA flashcards, and SIE study tools.",
+      "Used HTML, CSS, JavaScript, and Node.js to structure the browser dashboard and supporting project environment.",
+    ],
+  },
+  {
     slug: "ftc-robotics",
     title: "FTC Robotics",
     date: "2024-2025",
@@ -155,6 +179,27 @@ export const debateRoles = [
   },
 ];
 
+export const debateEnjoymentReasons = [
+  {
+    title: "It teaches me to clearly articulate my ideas",
+    description:
+      "Before I started debate, I often found it hard to articulate my ideas concisely, but with the expereince of adhering to speech times, I learned that every second counts which makes me more articulate.",
+    icon: "MessageSquareText",
+  },
+  {
+    title: "It makes me comfortable with pressure",
+    description:
+      "Fast rounds force me to listen carefully, think clearly, and make strategic decisions while the clock is running. Debate teaches me how to quickly weigh the benefits versus the harms of a decision.",
+    icon: "Scale",
+  },
+  {
+    title: "It builds real teamwork",
+    description:
+      "Preparing cases, drilling speeches, and adapting in round works best when my partner and I trust each other and communicate well. There are times when we disagree, but this activity has taught me to effectively work past disagreements quickly even under stress.",
+    icon: "Handshake",
+  },
+];
+
 export const hobbies = [
   {
     title: "Car spotting",
@@ -172,7 +217,7 @@ export const hobbies = [
     title: "Cricket",
     description:
       "Following cricket, with an appreciation for the strategy, patience, and consistency the sport rewards.",
-    icon: "Dumbbell",
+    icon: "CricketBat",
   },
   {
     title: "Debate",

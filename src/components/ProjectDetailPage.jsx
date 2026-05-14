@@ -1,19 +1,19 @@
 import React from "react";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Github } from "lucide-react";
 import Card from "./Card";
 import ContactWatermark from "./ContactWatermark";
 import InteractiveBackground from "./InteractiveBackground";
 
 export default function ProjectDetailPage({ project, onBack }) {
   return (
-    <div className="min-h-screen text-white relative">
+    <div className="site-shell relative min-h-screen text-white">
       <InteractiveBackground />
       <ContactWatermark />
       <div className="relative z-10 px-5 py-8">
         <div className="max-w-5xl mx-auto">
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-white/10 border border-white/20 text-white font-semibold backdrop-blur-xl"
+            className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-3 font-semibold text-white backdrop-blur-md transition hover:bg-white/15"
           >
             <ArrowLeft size={18} />
             Back to Portfolio
@@ -23,11 +23,11 @@ export default function ProjectDetailPage({ project, onBack }) {
             <p className="text-sm font-bold tracking-[0.25em] uppercase text-cyan-200 mb-4">
               {project.date}
             </p>
-            <h1 className="mb-10 max-w-4xl text-5xl font-black leading-[1.04] md:text-6xl">
+            <h1 className="text-sheen mb-10 max-w-4xl text-5xl font-black leading-[1.04] md:text-6xl">
               {project.title}
             </h1>
 
-            <div className="mb-12 overflow-hidden rounded-3xl border border-white/20 bg-white p-8">
+            <div className="mb-12 overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-white via-slate-100 to-cyan-50 p-8 shadow-[0_20px_54px_rgba(2,6,23,0.3)]">
               <img
                 src={project.image}
                 alt={project.title}
@@ -41,6 +41,17 @@ export default function ProjectDetailPage({ project, onBack }) {
                   Overview
                 </h2>
                 <p className="text-slate-700 leading-8">{project.description}</p>
+                {project.repoUrl && (
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="cool-button mt-6 inline-flex items-center gap-2 rounded-lg px-4 py-3 font-semibold"
+                  >
+                    <Github size={18} />
+                    View Repository
+                  </a>
+                )}
               </Card>
 
               <Card>
@@ -61,7 +72,7 @@ export default function ProjectDetailPage({ project, onBack }) {
             {project.gallery?.length > 0 && (
               <section className="mt-16">
                 <h2 className="mb-8 text-3xl font-black text-slate-100 md:text-4xl">
-                  FTC Gallery
+                  Project Gallery
                 </h2>
                 <div className="grid md:grid-cols-2 gap-5">
                   {project.gallery.map((image, index) => (
@@ -82,8 +93,8 @@ function GalleryImage({ image, featured }) {
     <figure
       className={
         featured
-          ? "group relative md:col-span-2 rounded-3xl overflow-hidden bg-white/10 border border-white/10"
-          : "group relative rounded-3xl overflow-hidden bg-white/10 border border-white/10"
+          ? "group relative overflow-hidden rounded-xl border border-white/18 bg-white/10 shadow-[0_18px_46px_rgba(2,6,23,0.36)] md:col-span-2"
+          : "group relative overflow-hidden rounded-xl border border-white/18 bg-white/10 shadow-[0_18px_46px_rgba(2,6,23,0.36)]"
       }
     >
       <img
@@ -95,14 +106,14 @@ function GalleryImage({ image, featured }) {
             : "w-full h-72 object-cover object-center transition duration-300 group-hover:scale-105"
         }
       />
-      <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-slate-950/90 p-5 text-white backdrop-blur-xl transition duration-300 group-hover:translate-y-0">
+      <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-slate-950/92 p-5 text-white backdrop-blur-md transition duration-300 group-hover:translate-y-0">
         <h3 className="text-xl font-bold mb-2">{image.alt}</h3>
         <p className="text-sm leading-6 text-white/75 mb-4">{image.description}</p>
         <div className="flex flex-wrap gap-2">
           {image.skills.map((skill) => (
             <span
               key={skill}
-              className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100"
+              className="rounded-md bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100"
             >
               {skill}
             </span>

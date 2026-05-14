@@ -103,7 +103,7 @@ export default function ProjectsSection({ onProjectOpen }) {
   const canScrollTimelineForward = timelinePosition.scrollLeft < timelineMaxScroll - 4;
 
   return (
-    <section id="cool-things" className="bg-slate-950 px-5 py-24 text-white md:py-32">
+    <section id="cool-things" className="border-y border-white/10 bg-slate-950/72 px-5 py-24 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-sm md:py-32">
       <div className="max-w-6xl mx-auto">
         <SectionHeader eyebrow="Projects & More" title="Cool things I've done" />
         <div className="mb-12 max-w-3xl space-y-5 text-base leading-8 text-white/70">
@@ -125,11 +125,11 @@ export default function ProjectsSection({ onProjectOpen }) {
         </p>
 
         <div className="relative">
-          <div className="absolute left-0 right-0 top-12 hidden h-px bg-white/20 md:block" />
+          <div className="absolute left-0 right-0 top-12 hidden h-px bg-gradient-to-r from-transparent via-cyan-200/35 to-transparent md:block" />
           <div
             ref={timelineRef}
             onScroll={handleTimelineScroll}
-            className="timeline-scrollbar flex gap-14 overflow-x-auto snap-x snap-mandatory pb-12 [perspective:850px] [transform-style:preserve-3d]"
+            className="timeline-scrollbar flex snap-x snap-mandatory gap-14 overflow-x-auto pb-12 [perspective:850px] [transform-style:preserve-3d]"
           >
             {sortedCoolThings.map((thing, index) => (
               <ProjectCard
@@ -142,19 +142,19 @@ export default function ProjectsSection({ onProjectOpen }) {
             ))}
           </div>
 
-          <div className="mt-4 flex items-center gap-3">
+          <div className="mt-4 flex items-center gap-3 rounded-xl border border-white/12 bg-white/8 p-2 backdrop-blur-md">
             <button
               type="button"
               onClick={() => scrollTimeline(-1)}
               disabled={!canScrollTimelineBack}
               aria-label="Scroll project timeline left"
-              className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-35"
+              className="flex h-10 w-10 flex-none items-center justify-center rounded-lg border border-white/15 bg-slate-950/60 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-35"
             >
               <ChevronLeft size={20} />
             </button>
-            <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full bg-white/15">
+            <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-md bg-white/15">
               <div
-                className="h-full rounded-full bg-cyan-200 transition-[width] duration-200"
+                className="h-full rounded-md bg-gradient-to-r from-cyan-200 via-emerald-200 to-amber-200 transition-[width] duration-200"
                 style={{ width: `${timelineMaxScroll ? Math.max(12, timelineProgress) : 100}%` }}
               />
             </div>
@@ -163,7 +163,7 @@ export default function ProjectsSection({ onProjectOpen }) {
               onClick={() => scrollTimeline(1)}
               disabled={!canScrollTimelineForward}
               aria-label="Scroll project timeline right"
-              className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-35"
+              className="flex h-10 w-10 flex-none items-center justify-center rounded-lg border border-white/15 bg-slate-950/60 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-35"
             >
               <ChevronRight size={20} />
             </button>
