@@ -5,7 +5,10 @@ import SectionHeader from "../SectionHeader";
 
 export default function AboutSection({ onNavigate }) {
   return (
-    <section id="about" className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36">
+    <section
+      id="about"
+      className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36"
+    >
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           eyebrow="About Me"
@@ -18,13 +21,15 @@ export default function AboutSection({ onNavigate }) {
               <User size={30} />
             </div>
             <div>
-              <h3 className="mb-3 text-xl font-semibold text-white">My story</h3>
+              <h3 className="mb-3 text-xl font-semibold text-white">
+                My story
+              </h3>
               <p className="max-w-3xl text-base leading-8 text-slate-300">
-                I was born in Washington on March 3rd 2011, and ever since I was a
-                kid, I had a fascination with building things, and finding solutions
-                to problems. From a young age, I enjoyed building Lego sets, and
-                basic programming. Since then I have continued to explore engineering,
-                and building concepts.
+                I was born in Washington on March 3rd 2011, and ever since I was
+                a kid, I had a fascination with building things, and finding
+                solutions to problems. From a young age, I enjoyed building Lego
+                sets, and basic programming. Since then I have continued to
+                explore engineering, and building concepts.
               </p>
               <button
                 onClick={() => onNavigate("/cool-things")}

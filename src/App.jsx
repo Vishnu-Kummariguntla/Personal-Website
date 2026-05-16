@@ -33,7 +33,12 @@ export default function App() {
   }
 
   if (selectedProject) {
-    return <ProjectDetailPage project={selectedProject} onBack={() => navigateTo("/cool-things")} />;
+    return (
+      <ProjectDetailPage
+        project={selectedProject}
+        onBack={() => navigateTo("/cool-things")}
+      />
+    );
   }
 
   const pages = {
@@ -56,7 +61,8 @@ export default function App() {
         <main>{currentPage}</main>
         <footer className="border-t border-white/10 px-5 py-8 text-center text-sm text-white/45">
           <p>
-            © {new Date().getFullYear()} {profile.name}. Built as a living portfolio.
+            © {new Date().getFullYear()} {profile.name}. Built as a living
+            portfolio.
           </p>
         </footer>
       </div>

@@ -22,7 +22,11 @@ button {
 }
 
 .site-shell {
-  background: linear-gradient(180deg, rgb(3 3 3 / 0) 0%, rgb(3 3 3 / 0.78) 100%);
+  background: linear-gradient(
+    180deg,
+    rgb(3 3 3 / 0) 0%,
+    rgb(3 3 3 / 0.78) 100%
+  );
 }
 
 .surface-card {
@@ -38,14 +42,21 @@ button {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgb(255 255 255 / 0.045), transparent 58%);
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.045),
+    transparent 58%
+  );
 }
 
 .cool-button {
   border: 1px solid rgb(255 255 255 / 0.14);
   background: rgb(255 255 255 / 0.08);
   color: white;
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
 }
 
 .cool-button:hover {

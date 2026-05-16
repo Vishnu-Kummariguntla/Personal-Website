@@ -4,7 +4,10 @@ import { profile } from "../../data";
 
 export default function Hero({ onNavigate }) {
   return (
-    <section id="home" className="px-5 pb-20 pt-28 text-white md:pb-28 md:pt-36">
+    <section
+      id="home"
+      className="px-5 pb-20 pt-28 text-white md:pb-28 md:pt-36"
+    >
       <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-[1.05fr_0.95fr]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -17,7 +20,9 @@ export default function Hero({ onNavigate }) {
           <p className="mt-6 max-w-xl text-xl font-medium leading-snug text-slate-200 md:text-2xl">
             Hi, I'm Vishnu and I like building things.
           </p>
-          <p className="mt-6 max-w-xl text-base leading-8 text-white/58">{profile.intro}</p>
+          <p className="mt-6 max-w-xl text-base leading-8 text-white/58">
+            {profile.intro}
+          </p>
           <p className="mt-5 max-w-xl border-l border-white/16 pl-5 text-sm font-medium leading-7 text-white/70 md:text-base">
             {profile.goal}
           </p>

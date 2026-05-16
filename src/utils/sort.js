@@ -24,5 +24,7 @@ export function groupDebateTournaments(tournaments, highlightsByYear) {
         .filter((event) => event.schoolYear === schoolYear)
         .sort((a, b) => getDebateYear(a) - getDebateYear(b)),
     }))
-    .filter((group) => group.highlights.length > 0 || group.tournaments.length > 0);
+    .filter(
+      (group) => group.highlights.length > 0 || group.tournaments.length > 0,
+    );
 }

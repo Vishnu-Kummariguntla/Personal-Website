@@ -75,8 +75,12 @@ export default function ProjectsSection({ onProjectOpen }) {
 
     const cardStep = timelinePosition.viewportWidth >= 768 ? 496 : 352;
     const cardCenter = index * cardStep + cardStep / 2;
-    const viewportCenter = timelinePosition.scrollLeft + timelinePosition.viewportWidth / 2;
-    const distance = Math.max(-2.1, Math.min(2.1, (cardCenter - viewportCenter) / cardStep));
+    const viewportCenter =
+      timelinePosition.scrollLeft + timelinePosition.viewportWidth / 2;
+    const distance = Math.max(
+      -2.1,
+      Math.min(2.1, (cardCenter - viewportCenter) / cardStep),
+    );
     const absDistance = Math.abs(distance);
     const rotateY = distance * -46;
     const rotateZ = distance * 5;
@@ -97,31 +101,48 @@ export default function ProjectsSection({ onProjectOpen }) {
     timelinePosition.scrollWidth - timelinePosition.viewportWidth,
   );
   const timelineProgress = timelineMaxScroll
-    ? Math.min(100, Math.max(0, (timelinePosition.scrollLeft / timelineMaxScroll) * 100))
+    ? Math.min(
+        100,
+        Math.max(0, (timelinePosition.scrollLeft / timelineMaxScroll) * 100),
+      )
     : 0;
   const canScrollTimelineBack = timelinePosition.scrollLeft > 4;
-  const canScrollTimelineForward = timelinePosition.scrollLeft < timelineMaxScroll - 4;
+  const canScrollTimelineForward =
+    timelinePosition.scrollLeft < timelineMaxScroll - 4;
 
   return (
-    <section id="cool-things" className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36">
+    <section
+      id="cool-things"
+      className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36"
+    >
       <div className="max-w-6xl mx-auto">
-        <SectionHeader eyebrow="Projects & More" title="Cool things I've done" />
+        <SectionHeader
+          eyebrow="Projects & More"
+          title="Cool things I've done"
+        />
         <div className="mb-12 max-w-3xl space-y-5 text-base leading-8 text-white/58">
           <p>
-          I love building things because I love watching complex systems come together
-          to create one cohesive product. Every project I do fuels my passion for
-          engineering. Listed below are the various projects and activities I have done
-          over the years and all the things I have learned from them.
+            I love building things because I love watching complex systems come
+            together to create one cohesive product. Every project I do fuels my
+            passion for engineering. Listed below are the various projects and
+            activities I have done over the years and all the things I have
+            learned from them.
           </p>
           <p>In my view these are the aspects of a successful project:</p>
           <ul className="list-disc space-y-2 pl-6 text-slate-300/85">
             <li>It solves a real problem or makes something easier to use.</li>
-            <li>It shows consistent results, and achieves what I have intended</li>
-            <li>It teaches me something new that I can carry into future projects.</li>
+            <li>
+              It produces reliable results and achieves the goal I designed it
+              for.
+            </li>
+            <li>
+              It teaches me something new that I can carry into future projects.
+            </li>
           </ul>
         </div>
         <p className="mb-8 text-sm font-semibold uppercase tracking-[0.16em] text-white/45">
-          Scroll sideways through the timeline to see projects from most recent to oldest.
+          Scroll sideways through the timeline to see projects from most recent
+          to oldest.
         </p>
 
         <div className="relative">
@@ -155,7 +176,9 @@ export default function ProjectsSection({ onProjectOpen }) {
             <div className="h-1.5 min-w-0 flex-1 overflow-hidden rounded-md bg-white/10">
               <div
                 className="h-full rounded-md bg-white/70 transition-[width] duration-200"
-                style={{ width: `${timelineMaxScroll ? Math.max(12, timelineProgress) : 100}%` }}
+                style={{
+                  width: `${timelineMaxScroll ? Math.max(12, timelineProgress) : 100}%`,
+                }}
               />
             </div>
             <button

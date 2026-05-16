@@ -3,12 +3,12 @@ export const profile = {
   tagline: "“Pursue excellence. Success will follow.”",
   intro:
     "I'm currently a student at Dougherty Valley High School and I am deeply interested in all the kinds of systems that come together to make the machines we interact with on a daily basis. I build projects ranging from robotics, to websites and more.",
-  goal:
-    "I am an engineer. My long-term goal is to build cool things that make life easier, and contribute to the development of humanity in a meaningful way",
+  goal: "I am an engineer. My long-term goal is to build cool things that make life easier, and contribute to the development of humanity in a meaningful way",
   phone: "925-574-3060",
   email: "vishnu.kummariguntla@gmail.com",
   github: "Vishnu-Kummariguntla",
-  linkedin: "https://www.linkedin.com/in/vishnu-kummariguntla-236315372/?skipRedirect=true",
+  linkedin:
+    "https://www.linkedin.com/in/vishnu-kummariguntla-236315372/?skipRedirect=true",
   image: "/images/profile/profile.png",
 };
 
@@ -56,12 +56,17 @@ export const coolThings = [
         alt: "FTC robot mechanism photo",
         description:
           "A closer look at the robot hardware and mechanism layout during developmental phases and refinement.",
-        skills: ["Computer Aided Design", "Engineering Process", "Design testing"],
+        skills: [
+          "Computer Aided Design",
+          "Engineering Process",
+          "Design testing",
+        ],
       },
       {
         src: "/images/ftc/robot-build-3.jpg",
         alt: "Autonomous programming",
-        description: "A view of the process behind programming the autonomous part of the game",
+        description:
+          "A view of the process behind programming the autonomous part of the game",
         skills: ["Programming", "Fine Tuning"],
       },
       {
@@ -129,7 +134,8 @@ export const debateTournaments = [
     result: "Champion",
     year: "2025",
     schoolYear: "Middle school",
-    description: "Competed at Nationals in Public Forum debate during middle school.",
+    description:
+      "Competed at Nationals in Public Forum debate during middle school.",
     centerResult: true,
     images: [
       {
@@ -183,7 +189,7 @@ export const debateEnjoymentReasons = [
   {
     title: "It teaches me to clearly articulate my ideas",
     description:
-      "Before I started debate, I often found it hard to articulate my ideas concisely, but with the expereince of adhering to speech times, I learned that every second counts which makes me more articulate.",
+      "Before I started debate, I often found it hard to articulate my ideas concisely, but with the experience of adhering to speech times, I learned that every second counts which makes me more articulate.",
     icon: "MessageSquareText",
   },
   {

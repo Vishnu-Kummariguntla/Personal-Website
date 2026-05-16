@@ -47,7 +47,9 @@ export default function InteractiveBackground() {
               height: star.size,
               opacity: star.opacity,
             }}
-            animate={{ opacity: [star.opacity * 0.45, star.opacity, star.opacity * 0.45] }}
+            animate={{
+              opacity: [star.opacity * 0.45, star.opacity, star.opacity * 0.45],
+            }}
             transition={{
               duration: 2.8 + (index % 6) * 0.4,
               repeat: Infinity,

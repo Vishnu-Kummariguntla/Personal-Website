@@ -17,9 +17,7 @@ export default function Navbar({ route, onNavigate }) {
         <button
           onClick={() => handleNavigate("/")}
           className={`rounded-md px-2 py-2 text-left text-sm font-semibold tracking-tight transition ${
-            route === "/"
-              ? "text-white"
-              : "text-white/62 hover:text-white"
+            route === "/" ? "text-white" : "text-white/62 hover:text-white"
           }`}
         >
           {profile.name}
@@ -71,9 +69,7 @@ function NavButton({ item, active, onClick }) {
     <button
       onClick={onClick}
       className={`rounded-md px-3 py-2 transition ${
-        active
-          ? "bg-white/10 text-white"
-          : "hover:bg-white/5 hover:text-white"
+        active ? "bg-white/10 text-white" : "hover:bg-white/5 hover:text-white"
       }`}
     >
       {item}

@@ -28,7 +28,9 @@ export default function ProjectCard({ project, index, style, onOpen }) {
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/42">
             {project.date}
           </p>
-          <h3 className="mb-3 text-xl font-semibold leading-snug text-white">{project.title}</h3>
+          <h3 className="mb-3 text-xl font-semibold leading-snug text-white">
+            {project.title}
+          </h3>
           <p className="mb-5 line-clamp-5 text-sm leading-7 text-slate-300/80">
             {project.description}
           </p>

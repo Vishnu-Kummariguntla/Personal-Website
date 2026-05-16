@@ -13,7 +13,10 @@ const hobbyIcons = {
 
 export default function HobbiesSection({ onNavigate }) {
   return (
-    <section id="hobbies" className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36">
+    <section
+      id="hobbies"
+      className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36"
+    >
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           eyebrow="Hobbies"
@@ -32,7 +35,9 @@ export default function HobbiesSection({ onNavigate }) {
                 <h3 className="mb-3 text-lg font-semibold leading-snug text-white">
                   {hobby.title}
                 </h3>
-                <p className="text-sm leading-7 text-slate-300">{hobby.description}</p>
+                <p className="text-sm leading-7 text-slate-300">
+                  {hobby.description}
+                </p>
                 {hobby.action && (
                   <button
                     type="button"
@@ -61,15 +66,50 @@ function CricketBat({ size = 26 }) {
       aria-hidden="true"
     >
       <g transform="rotate(-24 10.2 12)">
-        <rect x="8.7" y="1.6" width="3" height="4.3" rx="0.8" fill="currentColor" />
-        <rect x="8.25" y="5.5" width="3.9" height="1.2" rx="0.35" fill="currentColor" />
-        <rect x="8.9" y="7.1" width="2.6" height="1.6" rx="0.35" fill="currentColor" />
+        <rect
+          x="8.7"
+          y="1.6"
+          width="3"
+          height="4.3"
+          rx="0.8"
+          fill="currentColor"
+        />
+        <rect
+          x="8.25"
+          y="5.5"
+          width="3.9"
+          height="1.2"
+          rx="0.35"
+          fill="currentColor"
+        />
+        <rect
+          x="8.9"
+          y="7.1"
+          width="2.6"
+          height="1.6"
+          rx="0.35"
+          fill="currentColor"
+        />
         <path
           d="M6.7 8.6h7l-1 12.6c-.1.8-.8 1.4-1.6 1.4H9.3c-.8 0-1.5-.6-1.6-1.4L6.7 8.6Z"
           fill="currentColor"
         />
-        <rect x="7.15" y="9.7" width="6.1" height="1.1" fill="white" opacity="0.92" />
-        <rect x="7.65" y="18.7" width="5.1" height="1.1" fill="white" opacity="0.92" />
+        <rect
+          x="7.15"
+          y="9.7"
+          width="6.1"
+          height="1.1"
+          fill="white"
+          opacity="0.92"
+        />
+        <rect
+          x="7.65"
+          y="18.7"
+          width="5.1"
+          height="1.1"
+          fill="white"
+          opacity="0.92"
+        />
       </g>
       <circle cx="17.4" cy="12" r="3.2" fill="currentColor" />
       <path

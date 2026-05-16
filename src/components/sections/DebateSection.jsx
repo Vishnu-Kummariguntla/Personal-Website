@@ -23,7 +23,10 @@ const debateTournamentGroups = groupDebateTournaments(
 
 export default function DebateSection() {
   return (
-    <section id="debate" className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36">
+    <section
+      id="debate"
+      className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36"
+    >
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           eyebrow="Debate"
@@ -69,7 +72,10 @@ export default function DebateSection() {
                   {group.highlights.length > 0 && (
                     <div className="mb-5 space-y-2">
                       {group.highlights.map((highlight) => (
-                        <div key={highlight} className="flex gap-3 text-slate-300 leading-7">
+                        <div
+                          key={highlight}
+                          className="flex gap-3 text-slate-300 leading-7"
+                        >
                           <span className="mt-3 h-2 w-2 flex-none rounded-full bg-white/60" />
                           <p>{highlight}</p>
                         </div>
@@ -99,7 +105,9 @@ export default function DebateSection() {
                       <Mic size={26} />
                     </div>
                     <div>
-                      <p className="text-sm text-slate-400 font-semibold">{role.years}</p>
+                      <p className="text-sm text-slate-400 font-semibold">
+                        {role.years}
+                      </p>
                       <h4 className="text-xl font-semibold leading-snug text-white">
                         {role.title}
                       </h4>
@@ -134,7 +142,9 @@ function DebateTournamentCard({ event }) {
             <h5 className="mt-1 text-xl font-semibold leading-snug text-white">
               {event.tournament}
             </h5>
-            <p className="mt-3 text-base leading-7 text-slate-300">{event.description}</p>
+            <p className="mt-3 text-base leading-7 text-slate-300">
+              {event.description}
+            </p>
           </div>
           <div
             className={`${event.centerResult ? "mx-auto text-center" : ""} w-fit rounded-md border border-white/10 bg-white/5 px-4 py-2 font-semibold text-slate-200`}

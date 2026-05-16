@@ -40,7 +40,9 @@ export default function ProjectDetailPage({ project, onBack }) {
                 <h2 className="mb-4 text-2xl font-semibold text-white">
                   Overview
                 </h2>
-                <p className="text-slate-300 leading-8">{project.description}</p>
+                <p className="text-slate-300 leading-8">
+                  {project.description}
+                </p>
                 {project.repoUrl && (
                   <a
                     href={project.repoUrl}
@@ -76,7 +78,11 @@ export default function ProjectDetailPage({ project, onBack }) {
                 </h2>
                 <div className="grid md:grid-cols-2 gap-5">
                   {project.gallery.map((image, index) => (
-                    <GalleryImage key={image.src} image={image} featured={index === 0} />
+                    <GalleryImage
+                      key={image.src}
+                      image={image}
+                      featured={index === 0}
+                    />
                   ))}
                 </div>
               </section>
@@ -108,7 +114,9 @@ function GalleryImage({ image, featured }) {
       />
       <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-black/92 p-5 text-white backdrop-blur-md transition duration-300 group-hover:translate-y-0">
         <h3 className="text-xl font-semibold mb-2">{image.alt}</h3>
-        <p className="text-sm leading-6 text-white/75 mb-4">{image.description}</p>
+        <p className="text-sm leading-6 text-white/75 mb-4">
+          {image.description}
+        </p>
         <div className="flex flex-wrap gap-2">
           {image.skills.map((skill) => (
             <span
