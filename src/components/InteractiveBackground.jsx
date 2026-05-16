@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+const stars = Array.from({ length: 84 }, (_, index) => ({
+  left: `${(index * 37) % 100}%`,
+  top: `${(index * 53) % 100}%`,
+  size: `${index % 7 === 0 ? 2 : 1}px`,
+  opacity: 0.22 + (index % 5) * 0.08,
+  delay: (index % 9) * 0.35,
+}));
+
 export default function InteractiveBackground() {
   const [mouse, setMouse] = useState({ x: 50, y: 50 });
 
@@ -26,6 +34,28 @@ export default function InteractiveBackground() {
       />
 
       <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:64px_64px]" />
+
+      <div className="absolute inset-0">
+        {stars.map((star, index) => (
+          <motion.span
+            key={index}
+            className="absolute rounded-full bg-white"
+            style={{
+              left: star.left,
+              top: star.top,
+              width: star.size,
+              height: star.size,
+              opacity: star.opacity,
+            }}
+            animate={{ opacity: [star.opacity * 0.45, star.opacity, star.opacity * 0.45] }}
+            transition={{
+              duration: 2.8 + (index % 6) * 0.4,
+              repeat: Infinity,
+              delay: star.delay,
+            }}
+          />
+        ))}
+      </div>
 
       <motion.div
         className="absolute left-0 top-28 h-28 w-[36rem] -rotate-12 bg-white/[0.035] blur-3xl"

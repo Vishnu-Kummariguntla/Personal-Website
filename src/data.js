@@ -206,12 +206,20 @@ export const hobbies = [
     description:
       "Tracking interesting cars, learning the details behind different models, and noticing how design and engineering choices show up in the real world.",
     icon: "Car",
+    action: {
+      label: "View Cars",
+      path: "/cool-cars",
+    },
   },
   {
     title: "Programming",
     description:
       "Building small tools and experiments, exploring how software systems work, and turning ideas into usable projects.",
     icon: "Code2",
+    action: {
+      label: "See Projects",
+      path: "/cool-things",
+    },
   },
   {
     title: "Cricket",
@@ -224,6 +232,43 @@ export const hobbies = [
     description:
       "Researching complex topics, building arguments, and practicing clear communication through Public Forum debate.",
     icon: "Mic",
+    action: {
+      label: "View Debate",
+      path: "/debate",
+    },
+  },
+];
+
+export const carSpots = [
+  {
+    title: "McLaren 124c",
+    image: "/images/car spotting/car.png",
+    description:
+      "A low, bright yellow McLaren spotted on the road, with wide rear haunches, dark rear aero, and the compact stance that makes modern McLaren designs stand out.",
+  },
+  {
+    title: "Lamborghini Huracan STO",
+    image: "/images/car spotting/car1.png",
+    description:
+      "A red Lamborghini Huracan with sharp front lighting, hood vents, and aggressive aero details. It has the dramatic wedge shape Lamborghini is known for.",
+  },
+  {
+    title: "BMW E34 M5",
+    image: "/images/car spotting/car2.png",
+    description:
+      "A classic BMW E34 sedan with lowered fitment and deep-dish wheels, giving an older executive car a much more purposeful stance.",
+  },
+  {
+    title: "Ford Mustang GT Convertible",
+    image: "/images/car spotting/car3.png",
+    description:
+      "A gray Mustang GT convertible with a black soft top, black wheels, and the long-hood profile that defines the modern Mustang.",
+  },
+  {
+    title: "Mitsubishi Eclipse Display Car",
+    image: "/images/car spotting/car4.png",
+    description:
+      "A Mitsubishi Eclipse with a show-car look, including a detailed hood pattern and bright purple bodywork that makes it hard to miss.",
   },
 ];
 

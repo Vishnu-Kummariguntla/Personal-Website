@@ -11,7 +11,7 @@ const hobbyIcons = {
   Mic,
 };
 
-export default function HobbiesSection() {
+export default function HobbiesSection({ onNavigate }) {
   return (
     <section id="hobbies" className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36">
       <div className="max-w-6xl mx-auto">
@@ -33,6 +33,15 @@ export default function HobbiesSection() {
                   {hobby.title}
                 </h3>
                 <p className="text-sm leading-7 text-slate-300">{hobby.description}</p>
+                {hobby.action && (
+                  <button
+                    type="button"
+                    onClick={() => onNavigate(hobby.action.path)}
+                    className="cool-button mt-5 rounded-md px-4 py-2 text-sm font-semibold"
+                  >
+                    {hobby.action.label}
+                  </button>
+                )}
               </Card>
             );
           })}

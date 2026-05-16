@@ -5,6 +5,7 @@ import InteractiveBackground from "./components/InteractiveBackground";
 import Navbar from "./components/Navbar";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 import AboutSection from "./components/sections/AboutSection";
+import CarGalleryPage from "./components/sections/CarGalleryPage";
 import DebateSection from "./components/sections/DebateSection";
 import Hero from "./components/sections/Hero";
 import HobbiesSection from "./components/sections/HobbiesSection";
@@ -40,7 +41,8 @@ export default function App() {
     "/about": <AboutSection onNavigate={navigateTo} />,
     "/cool-things": <ProjectsSection onProjectOpen={navigateTo} />,
     "/debate": <DebateSection />,
-    "/hobbies": <HobbiesSection />,
+    "/hobbies": <HobbiesSection onNavigate={navigateTo} />,
+    "/cool-cars": <CarGalleryPage />,
   };
 
   const currentPage = pages[route] ?? pages["/"];
