@@ -23,7 +23,7 @@ const debateTournamentGroups = groupDebateTournaments(
 
 export default function DebateSection() {
   return (
-    <section id="debate" className="px-5 py-24 text-white md:py-32">
+    <section id="debate" className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           eyebrow="Debate"
@@ -32,7 +32,7 @@ export default function DebateSection() {
         />
         <div className="space-y-16">
           <div>
-            <h3 className="mb-8 text-xl font-bold text-slate-200">
+            <h3 className="mb-8 text-xl font-semibold text-slate-200">
               Why I Enjoy Debate
             </h3>
             <div className="grid gap-5 md:grid-cols-3">
@@ -41,13 +41,13 @@ export default function DebateSection() {
 
                 return (
                   <Card key={reason.title}>
-                    <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-lg bg-slate-950 text-white">
+                    <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-md bg-white/8 text-white">
                       <Icon size={26} />
                     </div>
-                    <h4 className="mb-3 text-lg font-bold leading-snug text-slate-800">
+                    <h4 className="mb-3 text-lg font-semibold leading-snug text-white">
                       {reason.title}
                     </h4>
-                    <p className="text-sm leading-7 text-slate-600">
+                    <p className="text-sm leading-7 text-slate-300">
                       {reason.description}
                     </p>
                   </Card>
@@ -57,20 +57,20 @@ export default function DebateSection() {
           </div>
 
           <div>
-            <h3 className="mb-8 text-xl font-bold text-slate-200">
+            <h3 className="mb-8 text-xl font-semibold text-slate-200">
               Tournament Results
             </h3>
             <div className="space-y-12">
               {debateTournamentGroups.map((group) => (
                 <div key={group.schoolYear}>
-                  <h4 className="mb-5 text-sm font-bold uppercase tracking-[0.18em] text-cyan-200/80">
+                  <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-white/45">
                     {group.schoolYear}
                   </h4>
                   {group.highlights.length > 0 && (
                     <div className="mb-5 space-y-2">
                       {group.highlights.map((highlight) => (
                         <div key={highlight} className="flex gap-3 text-slate-300 leading-7">
-                          <span className="mt-3 h-2 w-2 flex-none rounded-full bg-cyan-200" />
+                          <span className="mt-3 h-2 w-2 flex-none rounded-full bg-white/60" />
                           <p>{highlight}</p>
                         </div>
                       ))}
@@ -90,20 +90,20 @@ export default function DebateSection() {
           </div>
 
           <div>
-            <h3 className="mb-8 text-xl font-bold text-slate-200">Roles</h3>
+            <h3 className="mb-8 text-xl font-semibold text-slate-200">Roles</h3>
             <div className="grid md:grid-cols-2 gap-5">
               {debateRoles.map((role) => (
                 <Card key={role.title}>
                   <div className="flex gap-4">
-                    <div className="flex h-14 w-14 flex-none items-center justify-center rounded-lg bg-slate-950 text-white">
+                    <div className="flex h-14 w-14 flex-none items-center justify-center rounded-md bg-white/8 text-white">
                       <Mic size={26} />
                     </div>
                     <div>
-                      <p className="text-sm text-slate-500 font-semibold">{role.years}</p>
-                      <h4 className="text-xl font-bold leading-snug text-slate-800">
+                      <p className="text-sm text-slate-400 font-semibold">{role.years}</p>
+                      <h4 className="text-xl font-semibold leading-snug text-white">
                         {role.title}
                       </h4>
-                      <p className="mt-3 text-base leading-7 text-slate-700">
+                      <p className="mt-3 text-base leading-7 text-slate-300">
                         {role.description}
                       </p>
                     </div>
@@ -130,14 +130,14 @@ function DebateTournamentCard({ event }) {
           }
         >
           <div>
-            <p className="text-sm text-slate-500 font-semibold">{event.year}</p>
-            <h5 className="mt-1 text-xl font-bold leading-snug text-slate-800">
+            <p className="text-sm text-slate-400 font-semibold">{event.year}</p>
+            <h5 className="mt-1 text-xl font-semibold leading-snug text-white">
               {event.tournament}
             </h5>
-            <p className="mt-3 text-base leading-7 text-slate-700">{event.description}</p>
+            <p className="mt-3 text-base leading-7 text-slate-300">{event.description}</p>
           </div>
           <div
-            className={`${event.centerResult ? "mx-auto text-center" : ""} w-fit rounded-md bg-slate-100 px-4 py-2 font-bold text-slate-600`}
+            className={`${event.centerResult ? "mx-auto text-center" : ""} w-fit rounded-md border border-white/10 bg-white/5 px-4 py-2 font-semibold text-slate-200`}
           >
             {event.result}
           </div>

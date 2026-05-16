@@ -1,7 +1,3 @@
-export function scrollToSection(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-}
-
 export function sectionId(item) {
   const sectionIds = {
     About: "about",
@@ -11,4 +7,8 @@ export function sectionId(item) {
   };
 
   return sectionIds[item] ?? item.toLowerCase().replaceAll(" ", "-");
+}
+
+export function pathForNavItem(item) {
+  return `/${sectionId(item)}`;
 }

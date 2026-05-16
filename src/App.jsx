@@ -28,25 +28,31 @@ export default function App() {
   function navigateTo(path) {
     window.history.pushState({}, "", path);
     setRoute(path);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "auto" });
   }
 
   if (selectedProject) {
-    return <ProjectDetailPage project={selectedProject} onBack={() => navigateTo("/")} />;
+    return <ProjectDetailPage project={selectedProject} onBack={() => navigateTo("/cool-things")} />;
   }
 
+  const pages = {
+    "/": <Hero onNavigate={navigateTo} />,
+    "/about": <AboutSection onNavigate={navigateTo} />,
+    "/cool-things": <ProjectsSection onProjectOpen={navigateTo} />,
+    "/debate": <DebateSection />,
+    "/hobbies": <HobbiesSection />,
+  };
+
+  const currentPage = pages[route] ?? pages["/"];
+
   return (
-    <div className="site-shell relative min-h-screen text-slate-700">
+    <div className="site-shell relative min-h-screen text-white">
       <InteractiveBackground />
       <ContactWatermark />
       <div className="relative z-10">
-        <Navbar />
-        <Hero />
-        <AboutSection />
-        <ProjectsSection onProjectOpen={navigateTo} />
-        <DebateSection />
-        <HobbiesSection />
-        <footer className="border-t border-white/10 px-5 py-10 text-center text-white/60">
+        <Navbar route={route} onNavigate={navigateTo} />
+        <main>{currentPage}</main>
+        <footer className="border-t border-white/10 px-5 py-8 text-center text-sm text-white/45">
           <p>
             © {new Date().getFullYear()} {profile.name}. Built as a living portfolio.
           </p>

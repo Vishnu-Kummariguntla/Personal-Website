@@ -103,10 +103,10 @@ export default function ProjectsSection({ onProjectOpen }) {
   const canScrollTimelineForward = timelinePosition.scrollLeft < timelineMaxScroll - 4;
 
   return (
-    <section id="cool-things" className="border-y border-white/10 bg-slate-950/72 px-5 py-24 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-sm md:py-32">
+    <section id="cool-things" className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36">
       <div className="max-w-6xl mx-auto">
         <SectionHeader eyebrow="Projects & More" title="Cool things I've done" />
-        <div className="mb-12 max-w-3xl space-y-5 text-base leading-8 text-white/70">
+        <div className="mb-12 max-w-3xl space-y-5 text-base leading-8 text-white/58">
           <p>
           I love building things because I love watching complex systems come together
           to create one cohesive product. Every project I do fuels my passion for
@@ -114,18 +114,18 @@ export default function ProjectsSection({ onProjectOpen }) {
           over the years and all the things I have learned from them.
           </p>
           <p>In my view these are the aspects of a successful project:</p>
-          <ul className="list-disc space-y-2 pl-6 text-slate-300">
+          <ul className="list-disc space-y-2 pl-6 text-slate-300/85">
             <li>It solves a real problem or makes something easier to use.</li>
             <li>It shows consistent results, and achieves what I have intended</li>
             <li>It teaches me something new that I can carry into future projects.</li>
           </ul>
         </div>
-        <p className="mb-8 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200/80">
+        <p className="mb-8 text-sm font-semibold uppercase tracking-[0.16em] text-white/45">
           Scroll sideways through the timeline to see projects from most recent to oldest.
         </p>
 
         <div className="relative">
-          <div className="absolute left-0 right-0 top-12 hidden h-px bg-gradient-to-r from-transparent via-cyan-200/35 to-transparent md:block" />
+          <div className="absolute left-0 right-0 top-12 hidden h-px bg-white/10 md:block" />
           <div
             ref={timelineRef}
             onScroll={handleTimelineScroll}
@@ -142,19 +142,19 @@ export default function ProjectsSection({ onProjectOpen }) {
             ))}
           </div>
 
-          <div className="mt-4 flex items-center gap-3 rounded-xl border border-white/12 bg-white/8 p-2 backdrop-blur-md">
+          <div className="mt-4 flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.03] p-2 backdrop-blur-md">
             <button
               type="button"
               onClick={() => scrollTimeline(-1)}
               disabled={!canScrollTimelineBack}
               aria-label="Scroll project timeline left"
-              className="flex h-10 w-10 flex-none items-center justify-center rounded-lg border border-white/15 bg-slate-950/60 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-35"
+              className="flex h-10 w-10 flex-none items-center justify-center rounded-md border border-white/10 bg-black/30 text-white transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-35"
             >
               <ChevronLeft size={20} />
             </button>
-            <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-md bg-white/15">
+            <div className="h-1.5 min-w-0 flex-1 overflow-hidden rounded-md bg-white/10">
               <div
-                className="h-full rounded-md bg-gradient-to-r from-cyan-200 via-emerald-200 to-amber-200 transition-[width] duration-200"
+                className="h-full rounded-md bg-white/70 transition-[width] duration-200"
                 style={{ width: `${timelineMaxScroll ? Math.max(12, timelineProgress) : 100}%` }}
               />
             </div>
@@ -163,7 +163,7 @@ export default function ProjectsSection({ onProjectOpen }) {
               onClick={() => scrollTimeline(1)}
               disabled={!canScrollTimelineForward}
               aria-label="Scroll project timeline right"
-              className="flex h-10 w-10 flex-none items-center justify-center rounded-lg border border-white/15 bg-slate-950/60 text-white transition hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-35"
+              className="flex h-10 w-10 flex-none items-center justify-center rounded-md border border-white/10 bg-black/30 text-white transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-35"
             >
               <ChevronRight size={20} />
             </button>

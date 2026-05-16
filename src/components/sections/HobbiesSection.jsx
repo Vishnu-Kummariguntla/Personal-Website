@@ -13,7 +13,7 @@ const hobbyIcons = {
 
 export default function HobbiesSection() {
   return (
-    <section id="hobbies" className="px-5 py-24 text-white md:py-32">
+    <section id="hobbies" className="px-5 pb-24 pt-28 text-white md:pb-32 md:pt-36">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           eyebrow="Hobbies"
@@ -26,13 +26,13 @@ export default function HobbiesSection() {
 
             return (
               <Card key={hobby.title}>
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-lg bg-slate-950 text-white">
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-md bg-white/8 text-white">
                   <Icon size={26} />
                 </div>
-                <h3 className="mb-3 text-lg font-bold leading-snug text-slate-800">
+                <h3 className="mb-3 text-lg font-semibold leading-snug text-white">
                   {hobby.title}
                 </h3>
-                <p className="text-sm leading-7 text-slate-600">{hobby.description}</p>
+                <p className="text-sm leading-7 text-slate-300">{hobby.description}</p>
               </Card>
             );
           })}

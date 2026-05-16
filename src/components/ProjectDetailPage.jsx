@@ -13,21 +13,21 @@ export default function ProjectDetailPage({ project, onBack }) {
         <div className="max-w-5xl mx-auto">
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-3 font-semibold text-white backdrop-blur-md transition hover:bg-white/15"
+            className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-4 py-3 font-semibold text-white backdrop-blur-md transition hover:bg-white/10"
           >
             <ArrowLeft size={18} />
-            Back to Portfolio
+            Back to Projects
           </button>
 
           <section className="pb-24 pt-16">
-            <p className="text-sm font-bold tracking-[0.25em] uppercase text-cyan-200 mb-4">
+            <p className="text-sm font-semibold tracking-[0.22em] uppercase text-white/45 mb-4">
               {project.date}
             </p>
-            <h1 className="text-sheen mb-10 max-w-4xl text-5xl font-black leading-[1.04] md:text-6xl">
+            <h1 className="mb-10 max-w-4xl text-5xl font-semibold leading-[1.04] text-white md:text-6xl">
               {project.title}
             </h1>
 
-            <div className="mb-12 overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-white via-slate-100 to-cyan-50 p-8 shadow-[0_20px_54px_rgba(2,6,23,0.3)]">
+            <div className="mb-12 overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] p-8 shadow-[0_20px_54px_rgba(0,0,0,0.26)]">
               <img
                 src={project.image}
                 alt={project.title}
@@ -37,16 +37,16 @@ export default function ProjectDetailPage({ project, onBack }) {
 
             <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-6">
               <Card>
-                <h2 className="mb-4 text-2xl font-black text-slate-800">
+                <h2 className="mb-4 text-2xl font-semibold text-white">
                   Overview
                 </h2>
-                <p className="text-slate-700 leading-8">{project.description}</p>
+                <p className="text-slate-300 leading-8">{project.description}</p>
                 {project.repoUrl && (
                   <a
                     href={project.repoUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="cool-button mt-6 inline-flex items-center gap-2 rounded-lg px-4 py-3 font-semibold"
+                    className="cool-button mt-6 inline-flex items-center gap-2 rounded-md px-4 py-3 font-semibold"
                   >
                     <Github size={18} />
                     View Repository
@@ -55,13 +55,13 @@ export default function ProjectDetailPage({ project, onBack }) {
               </Card>
 
               <Card>
-                <h2 className="mb-4 text-2xl font-black text-slate-800">
+                <h2 className="mb-4 text-2xl font-semibold text-white">
                   Specifics
                 </h2>
-                <ul className="space-y-4 text-slate-700 leading-7">
+                <ul className="space-y-4 text-slate-300 leading-7">
                   {project.details.map((detail) => (
                     <li key={detail} className="flex gap-3">
-                      <span className="mt-3 h-2 w-2 flex-none rounded-full bg-slate-950" />
+                      <span className="mt-3 h-2 w-2 flex-none rounded-full bg-white/60" />
                       <span>{detail}</span>
                     </li>
                   ))}
@@ -71,7 +71,7 @@ export default function ProjectDetailPage({ project, onBack }) {
 
             {project.gallery?.length > 0 && (
               <section className="mt-16">
-                <h2 className="mb-8 text-3xl font-black text-slate-100 md:text-4xl">
+                <h2 className="mb-8 text-3xl font-semibold text-slate-100 md:text-4xl">
                   Project Gallery
                 </h2>
                 <div className="grid md:grid-cols-2 gap-5">
@@ -93,8 +93,8 @@ function GalleryImage({ image, featured }) {
     <figure
       className={
         featured
-          ? "group relative overflow-hidden rounded-xl border border-white/18 bg-white/10 shadow-[0_18px_46px_rgba(2,6,23,0.36)] md:col-span-2"
-          : "group relative overflow-hidden rounded-xl border border-white/18 bg-white/10 shadow-[0_18px_46px_rgba(2,6,23,0.36)]"
+          ? "group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] shadow-[0_18px_46px_rgba(0,0,0,0.28)] md:col-span-2"
+          : "group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] shadow-[0_18px_46px_rgba(0,0,0,0.28)]"
       }
     >
       <img
@@ -106,14 +106,14 @@ function GalleryImage({ image, featured }) {
             : "w-full h-72 object-cover object-center transition duration-300 group-hover:scale-105"
         }
       />
-      <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-slate-950/92 p-5 text-white backdrop-blur-md transition duration-300 group-hover:translate-y-0">
-        <h3 className="text-xl font-bold mb-2">{image.alt}</h3>
+      <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-black/92 p-5 text-white backdrop-blur-md transition duration-300 group-hover:translate-y-0">
+        <h3 className="text-xl font-semibold mb-2">{image.alt}</h3>
         <p className="text-sm leading-6 text-white/75 mb-4">{image.description}</p>
         <div className="flex flex-wrap gap-2">
           {image.skills.map((skill) => (
             <span
               key={skill}
-              className="rounded-md bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-100"
+              className="rounded-md bg-white/10 px-3 py-1 text-xs font-semibold text-white/75"
             >
               {skill}
             </span>
