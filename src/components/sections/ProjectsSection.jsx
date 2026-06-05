@@ -12,6 +12,8 @@ const sortedCoolThings = [...coolThings].sort(
 export default function ProjectsSection({ onProjectOpen }) {
   const timelineRef = useRef(null);
   const [timelinePosition, setTimelinePosition] = useState({
+    cardCenters: [],
+    cardStep: 1,
     scrollLeft: 0,
     viewportWidth: 0,
     scrollWidth: 0,
@@ -19,17 +21,7 @@ export default function ProjectsSection({ onProjectOpen }) {
 
   useEffect(() => {
     function updateTimelinePosition() {
-      const timeline = timelineRef.current;
-
-      if (!timeline) {
-        return;
-      }
-
-      setTimelinePosition({
-        scrollLeft: timeline.scrollLeft,
-        viewportWidth: timeline.clientWidth,
-        scrollWidth: timeline.scrollWidth,
-      });
+      setTimelinePosition(readTimelinePosition);
     }
 
     updateTimelinePosition();
@@ -42,17 +34,32 @@ export default function ProjectsSection({ onProjectOpen }) {
   }, []);
 
   function handleTimelineScroll() {
+    setTimelinePosition(readTimelinePosition);
+  }
+
+  function readTimelinePosition() {
     const timeline = timelineRef.current;
 
     if (!timeline) {
-      return;
+      return timelinePosition;
     }
 
-    setTimelinePosition({
+    const cards = Array.from(timeline.children);
+    const cardCenters = cards.map((card) => card.offsetLeft + card.offsetWidth / 2);
+    const cardSteps = cardCenters
+      .slice(1)
+      .map((center, index) => center - cardCenters[index]);
+    const cardStep = cardSteps.length
+      ? cardSteps.reduce((total, step) => total + step, 0) / cardSteps.length
+      : 1;
+
+    return {
+      cardCenters,
+      cardStep,
       scrollLeft: timeline.scrollLeft,
       viewportWidth: timeline.clientWidth,
       scrollWidth: timeline.scrollWidth,
-    });
+    };
   }
 
   function scrollTimeline(direction) {
@@ -62,8 +69,31 @@ export default function ProjectsSection({ onProjectOpen }) {
       return;
     }
 
-    timeline.scrollBy({
-      left: direction * timeline.clientWidth * 0.75,
+    const timelineMaxScroll = Math.max(0, timeline.scrollWidth - timeline.clientWidth);
+    const { cardCenters } = timelinePosition;
+
+    if (cardCenters.length < 2 || !timelineMaxScroll) {
+      return;
+    }
+
+    const firstCenter = cardCenters[0];
+    const lastCenter = cardCenters[cardCenters.length - 1];
+    const activeProgress = timeline.scrollLeft / timelineMaxScroll;
+    const activeCenter = firstCenter + (lastCenter - firstCenter) * activeProgress;
+    const activeIndex = cardCenters.reduce((closestIndex, center, index) => {
+      const closestDistance = Math.abs(cardCenters[closestIndex] - activeCenter);
+      const distance = Math.abs(center - activeCenter);
+      return distance < closestDistance ? index : closestIndex;
+    }, 0);
+    const targetIndex = Math.max(
+      0,
+      Math.min(cardCenters.length - 1, activeIndex + direction),
+    );
+    const targetProgress =
+      (cardCenters[targetIndex] - firstCenter) / (lastCenter - firstCenter);
+
+    timeline.scrollTo({
+      left: timelineMaxScroll * targetProgress,
       behavior: "smooth",
     });
   }
@@ -73,10 +103,27 @@ export default function ProjectsSection({ onProjectOpen }) {
       return {};
     }
 
-    const cardStep = timelinePosition.viewportWidth >= 768 ? 496 : 352;
-    const cardCenter = index * cardStep + cardStep / 2;
+    const { cardCenters, cardStep } = timelinePosition;
+
+    if (!cardCenters.length) {
+      return {};
+    }
+
+    const timelineMaxScroll = Math.max(
+      0,
+      timelinePosition.scrollWidth - timelinePosition.viewportWidth,
+    );
+    const firstCenter = cardCenters[0];
+    const lastCenter = cardCenters[cardCenters.length - 1];
+    const timelineProgress = timelineMaxScroll
+      ? Math.min(
+          1,
+          Math.max(0, timelinePosition.scrollLeft / timelineMaxScroll),
+        )
+      : 0;
     const viewportCenter =
-      timelinePosition.scrollLeft + timelinePosition.viewportWidth / 2;
+      firstCenter + (lastCenter - firstCenter) * timelineProgress;
+    const cardCenter = cardCenters[index];
     const distance = Math.max(
       -2.1,
       Math.min(2.1, (cardCenter - viewportCenter) / cardStep),
@@ -156,7 +203,6 @@ export default function ProjectsSection({ onProjectOpen }) {
               <ProjectCard
                 key={thing.title}
                 project={thing}
-                index={index}
                 style={getTimelineCardStyle(index)}
                 onOpen={() => onProjectOpen(`/projects/${thing.slug}`)}
               />

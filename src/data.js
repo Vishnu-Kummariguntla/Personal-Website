@@ -14,6 +14,67 @@ export const profile = {
 
 export const coolThings = [
   {
+    slug: "cricket-fan-engagement",
+    title: "Cricket Fan Engagement",
+    date: "2026",
+    description:
+      "Cricket Fan Engagement is an interactive IPL fan experience built with React and Vite. The app combines a product-style landing page, IPL 2026 squad browsing, player career timeline visualizations, and a personality-style fan quiz that maps user answers to cricket profiles. It uses JSON-backed roster and player data, Framer Motion, GSAP, Three.js, Firebase, and responsive CSS to create a polished cricket product experience.",
+    image: "/images/ipl/home.png",
+    repoUrl: "https://github.com/Vishnu-Kummariguntla/Cricket-Fan-Engagement",
+    siteUrl: "https://cricketfanengagement.vercel.app/timeline",
+    gallery: [
+      {
+        src: "/images/ipl/home.png",
+        alt: "IPL Universe landing page",
+        description:
+          "The home screen introduces the IPL Universe with direct entry points for the season timeline, dream team builder, auction room, personality quiz, and 2026 team explorer.",
+        skills: ["Product Design", "Navigation", "Three.js"],
+      },
+      {
+        src: "/images/ipl/auction-room.png",
+        alt: "IPL mega auction room",
+        description:
+          "A live auction simulator where users control a franchise purse, bid against AI teams, track squad limits, and build a balanced roster under IPL-style constraints.",
+        skills: ["Game Logic", "State Management", "Interactive UI"],
+      },
+      {
+        src: "/images/ipl/fan-quiz.png",
+        alt: "Cricketer personality quiz",
+        description:
+          "A 25-question fan quiz compares user choices against 60 player profiles, tracks progress, and locks the result until every prompt is answered.",
+        skills: ["Quiz Scoring", "Profile Matching", "UX Flow"],
+      },
+      {
+        src: "/images/ipl/dream-team.png",
+        alt: "IPL dream team builder",
+        description:
+          "The dream team builder lets users search and filter hundreds of players, assemble a Playing 12, choose an Impact Substitute, and compare team-score presets.",
+        skills: ["Search", "Filtering", "Roster Building"],
+      },
+      {
+        src: "/images/ipl/player-timeline.png",
+        alt: "Virat Kohli career timeline",
+        description:
+          "Player timeline visualizations turn career milestones into a connected knowledge network, showing major seasons, trophies, records, team context, and legacy moments.",
+        skills: ["Data Visualization", "Career Timelines", "Cricket Data"],
+      },
+      {
+        src: "/images/ipl/season-timeline.png",
+        alt: "IPL season timeline",
+        description:
+          "The IPL season timeline lets fans scrub through league history, highlighting champions, finals, Orange Cap winners, Purple Cap winners, and season-by-season context.",
+        skills: ["Timeline UI", "Historical Data", "Responsive Layout"],
+      },
+    ],
+    details: [
+      "Built a React and Vite IPL fan experience with routes for a landing page, fan quiz, and player visualizations.",
+      "Created an IPL 2026 squad browser with all 10 teams and player-level timeline visualizations.",
+      "Designed a personality-style fan quiz with progress tracking, delayed reveal, and 60 possible cricketer matches.",
+      "Used JSON-backed team, player, season, and timeline data to keep the interface data-driven and easier to update.",
+      "Integrated Framer Motion, GSAP, Three.js, Firebase, and responsive CSS for animation, account features, and a polished product feel.",
+    ],
+  },
+  {
     slug: "accounting-project",
     title: "MiniLedger",
     date: "2026",

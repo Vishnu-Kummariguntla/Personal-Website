@@ -1,16 +1,11 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
-export default function ProjectCard({ project, index, style, onOpen }) {
+export default function ProjectCard({ project, style, onOpen }) {
   return (
-    <motion.article
-      initial={{ opacity: 0, x: 36 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ delay: index * 0.1 }}
+    <article
       style={style}
-      className="group relative min-w-[19rem] snap-center pt-24 transition-all duration-300 ease-out [transform-style:preserve-3d] md:min-w-[26rem]"
+      className="group relative min-w-[19rem] snap-center pt-24 [transform-style:preserve-3d] md:min-w-[26rem]"
     >
       <p className="absolute left-1/2 top-1 -translate-x-1/2 whitespace-nowrap rounded-md border border-white/10 bg-black/70 px-3 py-1 text-sm font-semibold text-white/70 backdrop-blur-md">
         {project.date}
@@ -42,6 +37,6 @@ export default function ProjectCard({ project, index, style, onOpen }) {
           </button>
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }

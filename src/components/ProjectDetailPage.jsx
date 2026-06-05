@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowLeft, Github } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import Card from "./Card";
 import ContactWatermark from "./ContactWatermark";
 import InteractiveBackground from "./InteractiveBackground";
@@ -52,6 +52,17 @@ export default function ProjectDetailPage({ project, onBack }) {
                   >
                     <Github size={18} />
                     View Repository
+                  </a>
+                )}
+                {project.siteUrl && (
+                  <a
+                    href={project.siteUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="cool-button mt-4 inline-flex items-center gap-2 rounded-md px-4 py-3 font-semibold"
+                  >
+                    <ExternalLink size={18} />
+                    Visit Page
                   </a>
                 )}
               </Card>
